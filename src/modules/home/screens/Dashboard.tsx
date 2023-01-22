@@ -5,7 +5,7 @@ import {
   request,
   Permission,
 } from 'react-native-permissions';
-import {Layout, Button, Text} from '@ui-kitten/components';
+import {Layout, Button} from '@ui-kitten/components';
 import {StyleSheet, SafeAreaView, Platform, Alert} from 'react-native';
 import Box from '../../../design-system/components/Box';
 import {useDispatch, useSelector} from 'react-redux';
@@ -76,7 +76,6 @@ const Dashboard = () => {
     <Layout style={Styles.container}>
       <SafeAreaView style={Styles.container}>
         <Box center middle>
-          <Text>{enabled + ' ' + status}</Text>
           <Button onPress={signOut}>Sign Out</Button>
         </Box>
       </SafeAreaView>

@@ -84,7 +84,7 @@ const loadContactsEpic: RootEpic = (action$, state$, {db}) =>
       ]).pipe(
         map(([v, o]) => {
           // array comes from native code so I don't want to mutate
-          console.log('mine ', o);
+          console.log('mine ', v);
           let copy: ContactItem[] = [];
           const set = new Set(o.map(c => c.phone));
           const set2 = new Set();

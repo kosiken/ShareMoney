@@ -11,7 +11,7 @@
 #import "RCTShareMoneyContactModule.h"
 
 @implementation RCTShareMoneyContactModule
- RCT_EXPORT_MODULE(ShareMoneyContactModule);
+ RCT_EXPORT_MODULE();
 
 
 RCT_EXPORT_METHOD(loadContacts:(int) offset resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
