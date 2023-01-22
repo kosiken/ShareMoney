@@ -13,6 +13,7 @@ import {
 } from '@ui-kitten/components';
 import ShareMoneyContacts from './screens/ShareMoneyContacts';
 import Transactions from './screens/Transactions';
+import {Platform} from 'react-native';
 
 const Tabs = createBottomTabNavigator();
 
@@ -20,6 +21,9 @@ const MyTabBar: React.FC<BottomTabBarProps> = ({state, navigation}) => {
   return (
     <BottomNavigation
       selectedIndex={state.index}
+      style={{
+        paddingBottom: Platform.OS === 'ios' ? 20 : 5,
+      }}
       onSelect={index => navigation.navigate(state.routeNames[index])}>
       <BottomNavigationTab
         title="Home"
