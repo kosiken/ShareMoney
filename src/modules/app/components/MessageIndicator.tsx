@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Text, Card} from '@ui-kitten/components';
 import {useDispatch, useSelector} from 'react-redux';
@@ -43,7 +43,7 @@ export default MessageIndicator;
 const styles = StyleSheet.create({
   messageIndicator: {
     position: 'absolute',
-    top: 0,
+    top: Platform.OS === 'ios' ? 40 : 0,
     left: 0,
     height: 100,
     width: '100%',

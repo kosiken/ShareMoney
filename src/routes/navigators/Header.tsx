@@ -8,7 +8,7 @@ import {
   TopNavigationAction,
 } from '@ui-kitten/components';
 import {Platform} from 'react-native';
-import {useSafeAreaInsets, SafeAreaView} from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {StackHeaderProps} from '@react-navigation/stack';
 import Box from '../../design-system/components/Box';
 

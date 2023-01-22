@@ -33,6 +33,7 @@ function getPrefixAndNumber(phoneNumber: string) {
     if (!id.startsWith('+')) {
       id = '+' + id;
     }
+
     return {
       phone_prefix: prefix,
       phone,
@@ -46,7 +47,7 @@ export function getUniqueContacts(contacts: ContactItem[]) {
   for (let item of contacts) {
     // console.log(item.contact_id)
     let contact = getPrefixAndNumber(item.contact_id);
-    if (contact.phone.length >= 8 && contact.phone_prefix === '+234') {
+    if (contact.phone.length >= 3) {
       arr.push({...contact, name: item.name});
     }
   }

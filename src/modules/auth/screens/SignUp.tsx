@@ -52,6 +52,7 @@ const SignUp: React.FC<SignUpScreenProps> = () => {
                 dispatch(
                   initSignUp({
                     ...state,
+                    email: state.email.toLowerCase(),
                     user_id: uuid.v4() as string,
                   }),
                 );

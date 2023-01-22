@@ -33,7 +33,12 @@ const Login: React.FC<LoginScreenProps> = () => {
               password: '',
             }}
             onSubmit={values => {
-              dispatch(userSignInAction.request(values));
+              dispatch(
+                userSignInAction.request({
+                  ...values,
+                  email: values.email.toLowerCase(),
+                }),
+              );
             }}
             validationSchema={Yup.object({
               email: Yup.string().email('Invalid Email').required('Required'),
