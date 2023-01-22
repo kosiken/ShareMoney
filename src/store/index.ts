@@ -4,8 +4,10 @@ import thunk from 'redux-thunk';
 import {RootState, Services} from '../types';
 import {Actions, configureEpic} from './epics';
 import {logger} from './middleware';
-import appReducer from '../modules/app/appReducer';
+import appReducer from '../modules/app/store/appReducer';
 import SqlLiteApi from '../services/SqlLiteApi';
+import authReducer from '../modules/auth/store/authReducer';
+import contactsReducer from '../modules/contacts/store/contactsReducer';
 
 // we use this global store variable so that we can keep a reference
 // to the redux store retrieve this later on for example
@@ -15,7 +17,10 @@ let s: ToolkitStore<RootState, Actions, any[]>;
 const initialzeStore = () => {
   const rootReducer = combineReducers<RootState, Actions>({
     app: appReducer,
+    auth: authReducer,
+    contacts: contactsReducer,
   });
+  SqlLiteApi.initDatabase();
 
   const services: Services = {
     db: SqlLiteApi,

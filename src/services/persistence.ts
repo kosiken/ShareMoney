@@ -5,7 +5,7 @@ export interface Persistence {
 
   saveMany<T>(items: T[], params?: Record<string, any>): Promise<boolean>;
 
-  getOne<T>(query: any, params?: Record<string, any>): Promise<T>;
+  getOne<T>(query: any, params?: Record<string, any>): Promise<T | undefined>;
 
   getMany<T>(query: any, params?: Record<string, any>): Promise<T[]>;
 

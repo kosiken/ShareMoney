@@ -36,9 +36,9 @@
 		</dict>
 	</dict>
 	<key>NSContactsUsageDescription</key>
-	<string>Finovo requires to access your contacts to display contacts</string>
+	<string>Sharemoney requires to access your contacts to display contacts</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Regular.ttf</string>

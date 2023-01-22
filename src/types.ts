@@ -1,6 +1,9 @@
 import {Store} from 'redux';
-import { Persistence } from './services/persistence';
+import {Persistence} from './services/persistence';
 
+export enum PermissionsEnum {
+  CONTACTS = 'Contacts',
+}
 export interface Contact {
   id?: string;
   name: string;
@@ -14,29 +17,54 @@ export interface ContactItem {
   contact_id: string;
 }
 
+export interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  user_id?: string;
+  password?: string;
+}
+
+export interface AuthState {
+  user?: User;
+  loading: boolean;
+}
+
+export type MessageVariant = 'success' | 'danger' | 'info';
 export interface AppState {
   loading: boolean;
   signingIn: boolean;
+  errorMessage?:
+    | string
+    | {type: MessageVariant; message: string; title?: string};
+  permissions: Record<
+    PermissionsEnum,
+    {enabled: boolean; loading: boolean; status?: string}
+  >;
+  transactions: Transaction[];
+  loadingTransactions: boolean;
+}
+
+export interface Transaction {
+  amount: string;
+  created_at: Date | number;
+  user: string;
+  owner?: string;
+  paystackRef: string;
 }
 
 export interface ContactsState {
   contacts: ContactItem[];
-  finovoContacts: ContactItem[];
+  registeredContacts: ContactItem[];
   loadingContacts: boolean;
   hasContactsAccess: boolean;
 }
 
-export interface User {
-  id: number | string;
-  first_name?: string;
-  last_name?: string;
-  email: string;
-  phone: string;
-}
-
 export interface RootState {
   app: AppState;
-//   contacts: ContactsState;
+  auth: AuthState;
+  contacts: ContactsState;
 }
 
 export interface Services {

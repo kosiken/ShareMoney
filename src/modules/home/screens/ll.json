@@ -1,0 +1,24 @@
+{
+    "data": {
+        "event": "successful",
+        "transactionRef": {
+            "message": "Approved",
+            "redirecturl": "?trxref=T931585816121010&reference=T931585816121010",
+            "reference": "T931585816121010",
+            "status": "success",
+            "trans": "2467148570",
+            "transaction": "2467148570",
+            "trxref": "T931585816121010"
+        }
+    },
+    "status": "success",
+    "transactionRef": {
+        "message": "Approved",
+        "redirecturl": "?trxref=T931585816121010&reference=T931585816121010",
+        "reference": "T931585816121010",
+        "status": "success",
+        "trans": "2467148570",
+        "transaction": "2467148570",
+        "trxref": "T931585816121010"
+    }
+}
