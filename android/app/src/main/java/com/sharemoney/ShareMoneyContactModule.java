@@ -134,7 +134,7 @@ public class ShareMoneyContactModule extends ReactContextBaseJavaModule {
             if (cur != null) {
                 cur.close();
             }
-            Log.d("[FINOVO]", String.valueOf(promiseArray.size()));
+            Log.d("[SHARE_MONEY]", String.valueOf(promiseArray.size()));
             promise.resolve(promiseArray);
         } else {
             promise.reject("event_failure", "Permission not granted");
